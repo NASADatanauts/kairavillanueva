@@ -1,5 +1,5 @@
 ##Description:
-Web scraping is the practice of grabbing raw and unorganized information from web pages and turning them into usable and organized datasets. [Scrapy](http://scrapy.org/) is a framework for web scraping and crawling. 
+Web scraping is the practice of grabbing raw and unorganized information from web pages and turning them into usable and organized datasets. [Scrapy](http://scrapy.org/) is a framework for web scraping and crawling. This tutorial is for educational purposes. When scraping on your own, please read through these [suggested legal](http://www.bna.com/legal-issues-raised-by-the-use-of-web-crawling-and-scraping-tools-for-analytics-purposes) implications that could be violated.
 
 ##Requirements:
 * Python 2.7 - stable version
@@ -214,3 +214,4 @@ tutorial/
 	
 				yield item
 ```
+
