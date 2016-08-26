@@ -156,13 +156,13 @@ tutorial/
 
 ##Additional Notes:
 
-#### Example of a Scrapy bot [dahlia](git clone https://github.com/Zovfreullia/intro_to_scrapy/tree/master/dahlia)
+#### Example of a Scrapy bot [dahlia]( git clone https://github.com/NASADatanauts/kairavillanueva.git)
 
 #####A. Running the bot 
 * I made a bot that extracted seed names and product identification numbers from [Johnny Seeds](http://www.johnnyseeds.com/v-9-greenhouse-performer.aspx?categoryid=1&source=W_veg_ddShopBy#)
 * Download the <b>bot</b>
 ```
-	$ git clone https://github.com/Zovfreullia/intro_to_scrapy/tree/master/dahlia
+	$ git clone https://github.com/NASADatanauts/kairavillanueva.git
 ```
 * Go into the directory 
 ```
