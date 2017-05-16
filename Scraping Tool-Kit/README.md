@@ -1,20 +1,20 @@
-##Description:
+## Description:
 Web scraping is the practice of grabbing raw and unorganized information from web pages and turning them into usable and organized datasets. [Scrapy](http://scrapy.org/) is a framework for web scraping and crawling. This tutorial is for educational purposes. When scraping on your own, please read through these [suggested legal](http://www.bna.com/legal-issues-raised-by-the-use-of-web-crawling-and-scraping-tools-for-analytics-purposes) implications that could be violated.
 
-##Requirements:
+## Requirements:
 * Python 2.7 - stable version
 * pip 		 - python package management system
 * lxml		 - most linux distribution already have lxml install
 * OpenSSL 	 - comes preinstalled in all operating systems except Windows
 
 
-####I. Introduction to web scraping and installing Scrapy
+#### I. Introduction to web scraping and installing Scrapy
 
-#####A. What is web scraping?
+##### A. What is web scraping?
 * Web scraping is a technique used for extracting information from websites. Its main goal is to transform unstructured content from the web, usually in an HTML format, into a structured dataset that can be saved and examined in a spreadsheet or database. 
 * Examples: human copy-and-paste, UNIX grep paired with regex, HTTP requests, computer vision web analyzers, or web-scraping softwares
 
-#####B. Real world examples of web scraping
+##### B. Real world examples of web scraping
 * Aggregating prices of video games: putting together a list of prices for products that you are interested in is a thrifty way to find the best deals
 	+ http://www.gamestop.com/browse/games/xbox-one?nav=16k,28-xu0,131e0-ffff2418
 * Grabbing the daily weather: researchers can integrate weather data into their observations without measuring the weather with hardware tools
@@ -22,7 +22,7 @@ Web scraping is the practice of grabbing raw and unorganized information from we
 * Acquiring a list of conifers: this is the information we will be extracting, which is a list of known conifers in the world
 	+ http://www.greatplantpicks.org/plantlists/by_plant_type/conifer
 
-#####C. Installing Scrapy 
+##### C. Installing Scrapy 
 * Please refer to the requirements above
 * Further documentation on [installing Scrapy](http://doc.scrapy.org/en/latest/intro/install.html
 )
@@ -32,12 +32,12 @@ Web scraping is the practice of grabbing raw and unorganized information from we
 ```
 * 
 
-####II. Scrapy tools and basic structure
+#### II. Scrapy tools and basic structure
 
-#####A. What is Scrapy?
+##### A. What is Scrapy?
 * “Scrapy is an application framework for crawling web sites and extracting structured data which can be used for a wide range of useful applications, like data mining, information processing or historical archival” (scrapy.org).
 	
-#####B. List of Scrapy command-line tool
+##### B. List of Scrapy command-line tool
 ```
 $ scrapy <command> -h 
 ```
@@ -59,7 +59,7 @@ $ scrapy <command> -h
 	+ genspider
 	+ bench
 
-#####C. Structure of Scrapy
+##### C. Structure of Scrapy
 
 ```
 tutorial/
@@ -75,16 +75,16 @@ tutorial/
 
 
 
-####III. Building a Scrapy bot to extract conifer plants
+#### III. Building a Scrapy bot to extract conifer plants
 
-#####A. Creating a new project
+##### A. Creating a new project
 * Go to a directory you prefer
 * Create a new scrapy project
 ```
 	$ scrapy startproject conifers
 ```
 
-#####B. Defining field items in <b>items.py</b>
+##### B. Defining field items in <b>items.py</b>
 * Check the website with conifers again: http://www.greatplantpicks.org/plantlists/by_plant_type/conifer
 * Notice the names and scientific names? We'll extract those.
 * Open up <b>items.py</b> 
@@ -98,7 +98,7 @@ tutorial/
 	    species = scrapy.Field()
 	    pass
 ```
-#####C. Building the bot (4 minutes)
+##### C. Building the bot (4 minutes)
 * Open up spiders directory and it contains no spiders at the moment
 * We will add a spider now
 * Create a new file and name it <b>conifers_spider.py</b> inside the spiders directory
@@ -128,7 +128,7 @@ tutorial/
 * Go back to <b>conifers_spider.py</b> and comment out the function parse
 
 
-#####D. Extracting HTML elements using XPath and CSS selectors (4 minutes)
+##### D. Extracting HTML elements using XPath and CSS selectors (4 minutes)
 * We want to retrieve <em>only</em> the common names and scientific names
 * To do this, we need to refer to create an item for each one and generate all these objects
 * Add this new parse function with the old still commented
@@ -143,7 +143,7 @@ tutorial/
 ```
 * Go back to root project directory  and run the bot
 
-#####E. Running the bot we built and exporting the data as a csv and JSON file (2 minutes)
+##### E. Running the bot we built and exporting the data as a csv and JSON file (2 minutes)
 * Let's export this as a JSON file first
 ```
 	$ scrapy crawl conifers -o trees_json.json
@@ -154,11 +154,11 @@ tutorial/
 ```
 * Now you have extracted all the conifers-- happy trails!
 
-##Additional Notes:
+## Additional Notes:
 
 #### Example of a Scrapy bot [dahlia]( git clone https://github.com/NASADatanauts/kairavillanueva.git)
 
-#####A. Running the bot 
+##### A. Running the bot 
 * I made a bot that extracted seed names and product identification numbers from [Johnny Seeds](http://www.johnnyseeds.com/v-9-greenhouse-performer.aspx?categoryid=1&source=W_veg_ddShopBy#)
 * Download the <b>bot</b>
 ```
@@ -173,7 +173,7 @@ tutorial/
 	$ scrapy crawl dahlia
 ```
 
-#####B.	Looking through the code
+##### B.	Looking through the code
 * The <b>settings.py</b> is set to default
 ```
 	BOT_NAME = 'dahlia'
